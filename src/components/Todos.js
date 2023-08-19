@@ -1,8 +1,6 @@
 import React from "react";
 
-const Todos = ({ todos , deleteTodo, doneTodo}) => {
-
-
+const Todos = ({ todos, deleteTodo, doneTodo }) => {
 	return todos.length > 0 ? (
 		<ul className="todos">
 			{todos.map((todo) => (
@@ -15,14 +13,19 @@ const Todos = ({ todos , deleteTodo, doneTodo}) => {
 						{todo.name}
 					</span>
 					<div className="todos_buttons">
-						<button onClick={()=>{
-              deleteTodo(todo.id)
-            }} >❌</button>
 						<button
-              onClick={() => {
-                doneTodo(todo.id);
-              }}
-             disabled={todo.status}>
+							onClick={() => {
+								deleteTodo(todo.id);
+							}}
+						>
+							❌
+						</button>
+						<button
+							onClick={() => {
+								doneTodo(todo.id);
+							}}
+							disabled={todo.status}
+						>
 							✅
 						</button>
 					</div>

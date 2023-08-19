@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const TodoField = ({ addTodo }) => {
 	const [value, setValue] = useState("");
-  const inputRef = useRef(null); // Input alanına odaklanmak için referans oluşturuyoruz
-
+	const inputRef = useRef(null); // Input alanına odaklanmak için referans oluşturuyoruz
 
 	return (
 		<div className="todoField">
@@ -12,8 +11,7 @@ const TodoField = ({ addTodo }) => {
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
 				type="text"
-        ref={inputRef} // Input alanını referansa bağlıyoruz
-
+				ref={inputRef} // Input alanını referansa bağlıyoruz
 				className="todo_input"
 			/>
 			<button
@@ -23,10 +21,8 @@ const TodoField = ({ addTodo }) => {
 						name: value,
 						status: false,
 					});
-          setValue("");
-          inputRef.current.focus(); // Input alanına odaklanıyoruz
-
-          
+					setValue("");
+					inputRef.current.focus(); // Input alanına odaklanıyoruz
 				}}
 				className="todo_btn"
 			>

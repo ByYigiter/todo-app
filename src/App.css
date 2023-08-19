@@ -25,6 +25,15 @@ body{
 .todos{
     list-style-type: none;
     padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.todos::-webkit-scrollbar{
+    width: 7px;
+    background-color: rgb(10, 10, 10);
+}
+.todos::-webkit-scrollbar-thumb{
+    background-color: white;
 }
 .todos .todos_item{
     display: flex;
@@ -45,6 +54,6 @@ body{
     border: 0;
 }
 
-.todos .todos_text.todos_text-done{
+.todos .todos_text.todos_text_done{
     text-decoration: line-through;
 }

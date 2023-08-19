@@ -1,14 +1,39 @@
-import React from 'react'
+import React, { useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-const TodoField = () => {
-  return (
-    <div className='todoField'>
-        <input type='text' className='todo_input'/>
-        <button className='todo_btn'>Add</button>
+const TodoField = ({ addTodo }) => {
+	const [value, setValue] = useState("");
+  const inputRef = useRef(null); // Input alanına odaklanmak için referans oluşturuyoruz
 
-        
-    </div>
-  )
-}
 
-export default TodoField
+	return (
+		<div className="todoField">
+			<input
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
+				type="text"
+        ref={inputRef} // Input alanını referansa bağlıyoruz
+
+				className="todo_input"
+			/>
+			<button
+				onClick={() => {
+					addTodo({
+						id: uuidv4(),
+						name: value,
+						status: false,
+					});
+          setValue("");
+          inputRef.current.focus(); // Input alanına odaklanıyoruz
+
+          
+				}}
+				className="todo_btn"
+			>
+				Add
+			</button>
+		</div>
+	);
+};
+
+export default TodoField;

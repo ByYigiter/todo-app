@@ -16,6 +16,18 @@ function App() {
 			name: "GYM",
 			status: true,
 		},
+
+		{
+			id: 3,
+			name: "SPOR",
+			status: false,
+		},
+
+		{
+			id: 4,
+			name: "DERS",
+			status: false,
+		},
 	]);
 
 	const addTodo = (todo) => {

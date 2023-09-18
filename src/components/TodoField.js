@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
 
 const TodoField = ({ addTodo }) => {
 	const [value, setValue] = useState("");
@@ -14,7 +17,7 @@ const TodoField = ({ addTodo }) => {
 				ref={inputRef} // Input alanını referansa bağlıyoruz
 				className="todo_input"
 			/>
-			<button
+			<Button
 				onClick={() => {
 					addTodo({
 						id: uuidv4(),
@@ -25,9 +28,10 @@ const TodoField = ({ addTodo }) => {
 					inputRef.current.focus(); // Input alanına odaklanıyoruz
 				}}
 				className="todo_btn"
+				color="primary"
 			>
 				Add
-			</button>
+			</Button>
 		</div>
 	);
 };

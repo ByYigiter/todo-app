@@ -1,32 +1,59 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(24, 134, 134);
-    display: grid;
+    background-image: url("./components/pexels-pixabay-414660.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
     place-items: center;
     margin-top: 100px;
     color: white;
 
 }
+.app{
+    min-height: 60vh;
+    min-width: 70vh;
+}
 
 .todoField{
     display: flex;
     align-items: center;
+    justify-content: center; /* Yeni eklenen satır */
+    width: 100%; /* Yeni eklenen satır */
+    margin-top: 20px; /* Ayarladığınız değeri değiştirdim */
 }
 .todoField .todo_btn .todo_input{
     color: white;
     background-color: blue;
     border: 0;
     height: 40px;
-    outline: 0;
-
+    outline: 0; 
+    font-size: 40px; /* Input alanındaki metin boyutu */
+    flex: 1; /* Input alanının tüm boş alanı kaplamasını sağlar */
+}
+    .todo_btn.btn.btn-primary{
+        font-size: 40px;
+        margin: 5px 15px;
+        padding: 5px 50px;
+    }
+.app h1{
+    color:#57375D;
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 50px;
 }
 
 .todos{
     list-style-type: none;
     padding: 0;
-    max-height: 200px;
-    overflow-y: auto;
+
+    max-height: 400px; /* Maksimum yükseklik sınırlamasını kaldırır */
+    overflow-y: auto; /* Kaydırma çubuğunu gizler */
 }
 .todos::-webkit-scrollbar{
     width: 7px;
@@ -41,10 +68,16 @@ body{
     justify-content: space-between;
     width: 100%;
     margin-bottom: 10px;
+    font-size: 46px; /* Input alanındaki metin boyutu */
+
+}
+.todo_input{
+    font-size: 45px;
+    width: 680px;
 }
 .todos .todos_text{
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 50px;
 }
 .todos .todos_buttons button{
     margin-left: 5px;
@@ -52,6 +85,11 @@ body{
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    font-size: 46px; /* Buttonlardaki metin boyutu */
+
+}
+.todos::-webkit-scrollbar {
+    width: 0; /* Scrollbar'ı gizler */
 }
 
 .todos .todos_text.todos_text_done{

@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "reactstrap";
 
 const TodoField = ({ addTodo }) => {
 	const [value, setValue] = useState("");
